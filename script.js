@@ -1,6 +1,9 @@
 // ===== MAPA BASE =====
 var map = L.map('map').setView([-14.266, -42.259], 12);
 
+L.marker([-14.27, -42.26]).addTo(map)
+  .bindPopup("📍 Ponto de teste");
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '© OpenStreetMap'
@@ -370,3 +373,4 @@ fetch("dados.json")
   .then(r => r.json())
   .then(lista => lista.forEach(item => addPonto(item.nome, item.lat, item.lng, item)))
   .catch(err => console.error("Erro ao carregar dados.json:", err));
+
