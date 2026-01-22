@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#map {
+  height: 80vh;
+  width: 100%;
+}
+/* Mantém o mapa ocupando a tela toda */
+html, body { height: 100%; margin: 0; }
+#map {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* iOS/Android: evita “corte” e respeita área segura */
+:root { --safe-bottom: env(safe-area-inset-bottom); }
+
+@media (max-width: 768px) {
+  /* Popup mais confortável no toque */
+  .leaflet-popup-content {
+    margin: 10px 12px;
+    font-size: 15px;
+    line-height: 1.25;
+  }
+  .leaflet-popup-content-wrapper {
+    border-radius: 14px;
+  }
+
+  /* Controles com dedo */
+  .leaflet-control-zoom a {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+  }
+
+  /* Se sua legenda for um .leaflet-control, dá pra limitar */
+  .leaflet-control {
+    max-width: calc(100vw - 24px);
+  }
+
+  /* Afastar controles de baixo (quando houver) */
+  .leaflet-bottom .leaflet-control {
+    margin-bottom: calc(12px + var(--safe-bottom));
+  }
+}

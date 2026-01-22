@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+  /* Melhor experiência no touch */
+  html, body { height: 100%; margin: 0; }
+  #map { height: 100vh; width: 100vw; }
+
+  /* Popup mais confortável */
+  .leaflet-popup-content {
+    margin: 10px 12px;
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  .leaflet-popup-content-wrapper { border-radius: 12px; }
+
+  /* Ajustes mobile */
+  @media (max-width: 600px) {
+    .leaflet-control-layers {
+      font-size: 14px;
+      max-height: 50vh;
+      overflow: auto;
+    }
+    .leaflet-control-layers-expanded {
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    /* Busca e legenda mais compactas */
+    .busca-box > div { min-width: 200px !important; }
+    .legenda-icones > div { min-width: 160px !important; font-size: 13px !important; }
+
+    /* Popup ocupa mais largura, sem estourar */
+    .leaflet-popup-content { max-width: 260px; }
+  }
+</style>
+
+  <meta charset="UTF-8">
+  <title>Mapeamento de Serviços e Atividades em Ibiassucê</title>
+
+  <!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+  <!-- Estilo próprio -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Mapeamento de Serviços e Atividades em Ibiassucê</h1>
+  <p>Clique nas comunidades para conhecer suas histórias e nosso trabalho.</p>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+  <!-- Script do mapa -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
